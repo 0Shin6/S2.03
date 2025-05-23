@@ -1,0 +1,10 @@
+ip address add 172.18.167.2/28 dev eth0
+ip address add 172.18.166.125/25 dev eth1
+
+ip link set dev eth0 up
+ip link ste dev eth1 up
+
+ip route add default via 172.18.167.1
+ip route add 172.18.166.128/25 via 172.18.166.126
+
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
